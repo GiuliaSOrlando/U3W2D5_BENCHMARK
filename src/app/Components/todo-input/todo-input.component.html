@@ -1,0 +1,10 @@
+<form>
+  <input
+    type="text"
+    name="new-todo"
+    placeholder="Insert new task"
+    [(ngModel)]="newTodo.title"
+  />
+
+  <button (click)="addSingleTodo()">Add</button>
+</form>

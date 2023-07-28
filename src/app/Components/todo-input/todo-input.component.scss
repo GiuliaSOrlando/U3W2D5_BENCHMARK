@@ -1,0 +1,26 @@
+form {
+  list-style-type: none;
+  display: flex;
+  margin: 0 0 0 40px;
+  padding: 15px 20px;
+  background: #cae4df;
+  font-size: 1.1em;
+  transition: 0.4s;
+  font-family: sans-serif;
+  justify-content: space-between;
+}
+
+input {
+  width: 90%;
+  border: none;
+}
+
+h4,
+p {
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  height: 50px;
+}

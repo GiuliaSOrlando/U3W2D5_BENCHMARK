@@ -1,0 +1,11 @@
+<ul *ngIf="isJson">
+  <li *ngFor="let todo of todos">
+    <h4 *ngIf="!isEditing">{{ todo.title }}</h4>
+    <input *ngIf="isEditing" [(ngModel)]="newTodo.title" />
+    <p>{{ todo.id }}</p>
+    <button *ngIf="isEditing" (click)="saveTodo(todo)">Save</button>
+    <button (click)="editSingleTodo(todo)">Edit</button>
+    <button (click)="deleteSingleTodo(todo)">Delete</button>
+  </li>
+</ul>
+<p *ngIf="!isJson">Oops, no tasks found!</p>
