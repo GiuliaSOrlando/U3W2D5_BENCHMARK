@@ -1,0 +1,10 @@
+<ul *ngIf="isJson">
+  <app-single-todo
+    *ngFor="let todo of todos"
+    [SingleTodo]="todo"
+  ></app-single-todo>
+</ul>
+<p *ngIf="!isJson">
+  Oops, no tasks found! It may also be that we are still loading the tasks,
+  because your connection is just slow ;-&#40;
+</p>

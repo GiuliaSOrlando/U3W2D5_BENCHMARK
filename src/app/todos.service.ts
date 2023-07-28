@@ -1,12 +1,15 @@
+import { Todo } from 'src/app/todo';
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
+  todo: Todo[] = [];
   private todoApiUrl: string = 'http://localhost:3000/Todos';
-  constructor() {}
+  constructor() {
+    this.getTodo().then((res) => (this.todo = res));
+  }
 
   // Fetch, metodo:GET
   getTodo(): Promise<Todo[]> {
@@ -40,5 +43,23 @@ export class TodosService {
     return fetch(`${this.todoApiUrl}/${id}`, {
       method: 'DELETE',
     }).then((response) => response.json());
+  }
+
+  getModifyStatus(id: number) {
+    this.getTodo().then((res) => {
+      this.todo = res;
+      const found = this.todo.filter((todo) => todo.id === id)[0];
+      console.log(found);
+      console.log(this.todo);
+      return fetch(this.todoApiUrl + '/' + id, {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'PATCH',
+        body: JSON.stringify({
+          completed: !found.completed,
+        }),
+      }).catch((err) => {
+        console.log(err);
+      });
+    });
   }
 }

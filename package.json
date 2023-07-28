@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate": "node ./index.js > ./src/assets/db.json",
-    "json:server": "json-server --watch src/assets/db.json"
+    "json:server": "json-server --watch src/assets/db.json --delay 2000"
   },
   "private": true,
   "dependencies": {

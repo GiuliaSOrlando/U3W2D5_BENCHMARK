@@ -1,1 +1,12 @@
-<p>completed works!</p>
+<div *ngIf="!(todoList | async)">
+  <p>Caricamento in corso...</p>
+</div>
+<div class="tasks">
+  <ul>
+    <div *ngFor="let task of todoList | async">
+      <li class="li" *ngIf="task.completed">
+        <span>{{ task.title }}</span>
+      </li>
+    </div>
+  </ul>
+</div>

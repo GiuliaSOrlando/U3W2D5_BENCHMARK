@@ -9,6 +9,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SingleTodoComponent } from './Components/single-todo/single-todo.component';
 import { FormsModule } from '@angular/forms';
 import { TodoInputComponent } from './Components/todo-input/todo-input.component';
+import { TodosService } from './todos.service';
+import { TodoListComponent } from './Components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { TodoInputComponent } from './Components/todo-input/todo-input.component
     NavbarComponent,
     SingleTodoComponent,
     TodoInputComponent,
+    TodoListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
