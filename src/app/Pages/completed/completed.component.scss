@@ -1,0 +1,32 @@
+li {
+  list-style-type: none;
+  display: flex;
+  padding: 15px 20px;
+  background: #cae4df;
+  font-size: 1.1em;
+  transition: 0.4s;
+  font-family: sans-serif;
+  justify-content: space-between;
+}
+
+li:hover {
+  background: #6e7e7c;
+}
+
+input {
+  border: none;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+p {
+  font-weight: normal;
+  padding: 0 0 0 40px;
+}
+
+button {
+  border: none;
+  height: 50px;
+}
