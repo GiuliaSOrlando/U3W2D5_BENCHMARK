@@ -20,12 +20,6 @@ export class TodoListComponent {
     });
   }
 
-  deleteSingleTodo(todo: Todo) {
-    this.service.deleteTodo(todo.id).then(() => {
-      this.todos = this.todos.filter((singletodo) => singletodo.id !== todo.id);
-    });
-  }
-
   ngOnChanges() {
     console.log(this.todos);
     if (this.todos.length === 0) {
